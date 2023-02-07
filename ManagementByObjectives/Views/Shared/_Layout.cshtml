@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Gerenciamento de Objetivos</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ManagementByObjectives.styles.css" asp-append-version="true" />
+</head>
+<body>
+
+    <div class="area"></div>
+    
+    <nav class="main-menu">
+        <ul>
+            <li>
+                <a asp-action="Index" asp-controller="Objetivo">
+                    <i class="fa fa-home fa-2x"></i>
+                    <span class="nav-text">
+                        Home
+                    </span>
+                </a>
+
+            </li>                                  
+            <li>
+                <a asp-action="Listar" asp-controller="Usuario">
+                    <i class="fa fa-user"></i>
+                    <span class="nav-text">
+                        Usuários Administrativos
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-cog"></i>
+                    <span class="nav-text">
+                        Cadastro de Ciclos
+                    </span>
+                </a>
+            </li>   
+            <li>
+                <a href="#">
+                    <i class="fa fa-users"></i>
+                    <span class="nav-text">
+                        Alteração de Gestor
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-search"></i>
+                    <span class="nav-text">
+                        Consulta de Objetivos
+                    </span>
+                </a>
+            </li>            
+            <li>
+                <a href="#">
+                    <i class="fa fa-info fa-2x"></i>
+                    <span class="nav-text">
+                        Swagger APIs
+                    </span>
+                </a>
+            </li>
+        </ul>
+
+        <ul class="logout">
+            <li>
+                <a asp-action="Index" asp-controller="Login">
+                    <i class="fa fa-power-off fa-2x"></i>
+                    <span class="nav-text">
+                        Logout
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+	    
+    <br />
+    <div class="container">
+        <main role="main" class="pb-3">
+           
+            @RenderBody()
+        </main>
+    </div>
+
+    @*<footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - ManagementByObjectives - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>*@
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,68 @@
+﻿@model ManagementByObjectives.Models.Usuario
+@{
+    Layout = null;
+}
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Management By Objectives</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ManagementByObjectives.styles.css" asp-append-version="true" />
+</head>
+<body class="login">
+    <br />
+    <br />
+    <br />
+    <div class="divPrincipal">
+        @*<div class="conteudo-login-esquerda">
+            <br>
+            <br />
+            <br />
+            <strong>MANAGEMENT BY OBJECTIVES</strong><br />
+            <p class="labelDescricao">Sistema para controle de gerenciamento de objetivos</p>
+            <img src="~/img/imgmbo.png" width="220px"/>
+        </div>*@
+        <div class="conteudo-login-direita">
+            
+            <h3>LOGIN</h3><br />
+            <form asp-action="Login">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                @*<div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+                </div>*@
+
+                <div class="form-group">
+                    <label class="labelLogin"></label>Usuário:<br />
+                    <input asp-for="Email" class="inputLogin" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="form-group">
+                    <label class="labelLogin"></label>Senha:<br />
+                    <input type="password" asp-for="Senha" class="inputLogin" />
+                </div>
+                <br />
+                <div class="form-group">
+                    <center><a href="*"><p class="labelLogin">Esqueceu sua senha?</p></a></center>
+                </div>
+                
+                <div class="form-group">
+                    <input type="submit" value="Entrar" class="botaoEntrar" />
+                </div>
+                <br />
+                <div class="form-group">
+                    <center>
+                    <label class="labelAcelera">Curso Acelera Senior</label><br />
+                    <label class="labelDev">Desenvolvido por: Diego Batista, Murilo Silva e Tacito Batista</label>
+                    </center>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+

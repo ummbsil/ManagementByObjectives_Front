@@ -1,0 +1,64 @@
+﻿@model IEnumerable<ManagementByObjectives.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Listar";
+}
+
+<h1>Lista de Administradores</h1>
+
+<p>
+    <a asp-action="Incluir">Incluir Novo Adm</a>
+</p>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Senha)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.DataCriacao)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Senha)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.DataCriacao)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Editar", new { id=item.Id  }) |                
+                @Html.ActionLink("Excluir", "Excluir", new { id=item.Id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
